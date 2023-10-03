@@ -11,11 +11,15 @@ import org.slf4j.LoggerFactory;
 public class Quirl implements ModInitializer {
     public static final Logger LOGGER = LoggerFactory.getLogger("quirl");
     public static final String MOD_ID = "quirl";
+    public static final Boolean MOD_TEST_MODE = false;
 
     @Override
     public void onInitialize() {
 
-        LOGGER.info("Hello Fabric world!");
-        CustomShovelInteract.addResult(Blocks.ACACIA_PLANKS.getDefaultState(), Blocks.DIRT.getDefaultState(), SoundEvents.ITEM_SHOVEL_FLATTEN, SoundCategory.BLOCKS);
+        LOGGER.info("Hi, im a quirl");
+        if (MOD_TEST_MODE) {
+            LOGGER.warn("quirl is in test mode! do not release with 'MOD_TEST_MOD = true'!");
+            CustomShovelInteract.addResult(Blocks.ACACIA_PLANKS.getDefaultState(), Blocks.DIRT.getDefaultState(), SoundEvents.ITEM_SHOVEL_FLATTEN, SoundCategory.BLOCKS);
+        }
     }
 }
