@@ -1,0 +1,30 @@
+{
+	"schemaVersion": 1,
+	"id": "quirl",
+	"version": "${version}",
+	"name": "quirl",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"rotgruengelb"
+	],
+	"contact": {
+		"sources": "https://github.com/rotgruengelb/quirl"
+	},
+	"license": "MIT",
+	"icon": "assets/quirl/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.rotgruengelb.quirl.Quirl"
+		]
+	},
+	"mixins": [
+		"quirl.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.14.22",
+		"minecraft": "1.20.X",
+		"java": ">=17",
+		"fabric-api": "*"
+	}
+}
