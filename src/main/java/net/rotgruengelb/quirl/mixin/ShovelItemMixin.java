@@ -28,12 +28,11 @@ public class ShovelItemMixin {
 		BlockState blockState = world.getBlockState(blockPos);
 		if (context.getSide() != Direction.DOWN) {
 			PlayerEntity playerEntity = context.getPlayer();
-			ShovelInteractResult interactResult = CUSTOM_SHOVEL_INTERACT_RESULTS.get(blockState);
-			BlockState blockState2 = interactResult.getNew_blockstate();
+			ShovelInteractResult shovelInteractResult = CUSTOM_SHOVEL_INTERACT_RESULTS.get(blockState);
 			BlockState blockState3 = null;
-			if (blockState2 != null && world.getBlockState(blockPos.up()).isAir()) {
-				world.playSound(playerEntity, blockPos, interactResult.getInteract_sound_event(), interactResult.getInteract_sound_category(), 1.0f, 1.0f);
-				blockState3 = blockState2;
+			if (shovelInteractResult != null && world.getBlockState(blockPos.up()).isAir()) {
+				world.playSound(playerEntity, blockPos, shovelInteractResult.getInteract_sound_event(), shovelInteractResult.getInteract_sound_category(), 1.0f, 1.0f);
+				blockState3 = shovelInteractResult.getNew_blockstate();
 			}
 			if (blockState3 != null) {
 				if (!world.isClient) {
