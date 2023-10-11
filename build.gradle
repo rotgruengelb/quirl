@@ -108,8 +108,8 @@ allprojects {
                 name = "OSSRH"
                 url = "${rootProject.publish_url}"
                 credentials {
-                    username = System.getenv("MAVEN_USERNAME")
-                    password = System.getenv("MAVEN_PASSWORD")
+                    username = System.getenv("OSSRH_USERNAME")
+                    password = System.getenv("OSSRH_PASSWORD")
                 }
             }
         }
