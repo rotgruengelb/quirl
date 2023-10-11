@@ -106,7 +106,7 @@ allprojects {
         repositories {
             maven {
                 name = "OSSRH"
-                url = "https://s01.oss.sonatype.org/content/repositories/snapshots/"
+                url = "${rootProject.publish_url}"
                 credentials {
                     username = System.getenv("MAVEN_USERNAME")
                     password = System.getenv("MAVEN_PASSWORD")
