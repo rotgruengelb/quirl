@@ -3,12 +3,14 @@ plugins {
     id 'fabric-loom' version '1.2-SNAPSHOT'
     id 'maven-publish'
     id 'io.github.juuxel.loom-vineflower' version '1.11.0'
+    id 'signing'
 }
 
 allprojects {
     apply plugin: "java"
     apply plugin: "fabric-loom"
     apply plugin: "maven-publish"
+    apply plugin: "signing"
 
     def ENV = System.getenv()
 
@@ -58,6 +60,7 @@ allprojects {
         // if it is present.
         // If you remove this line, sources will not be generated.
         withSourcesJar()
+        withJavadocJar()
     }
 
     jar {
@@ -70,6 +73,29 @@ allprojects {
         publications {
             mavenJava(MavenPublication) {
                 from components.java
+                pom {
+                    name = 'quirl'
+                    description = 'A Minecraft Fabric Library providing general utility and tools that help with adding to existing Minecraft mechanics.'
+                    url = 'https://github.com/rotgruengelb/quirl'
+                    licenses {
+                        license {
+                            name = 'MIT License'
+                            url = 'https://opensource.org/license/MIT'
+                        }
+                    }
+                    developers {
+                        developer {
+                            id = 'rotgruengelb'
+                            name = 'Daniel (aka. rotgruengelb)'
+                            email = 'rotgrungelblab@gmail.com'
+                        }
+                    }
+                    scm {
+                        connection = 'scm:git:git://github.com/rotgruengelb/quirl.git'
+                        developerConnection = 'scm:git:ssh://github.com/rotgruengelb/quirl.git'
+                        url = 'https://github.com/rotgruengelb/quirl/'
+                    }
+                }
             }
         }
 
