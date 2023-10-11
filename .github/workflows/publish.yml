@@ -56,7 +56,7 @@ jobs:
         run: ./gradlew publish -Psigning.keyId=${{secrets.OSSRH_GPG_SECRET_KEY_ID}} -Psigning.password='${{secrets.OSSRH_GPG_SECRET_KEY_PASSWORD}}' -Psigning.secretKeyRingFile=$(echo ~/.gradle/secring.gpg) --warn --stacktrace
         env:
           OSSRH_USERNAME: ${{secrets.OSSRH_USERNAME}}
-          OSSRH_PASSWORD: ${{secrets.OSSRH_PASSWORD}}
+          OSSRH_PASSWORD: ${{secrets.OSSRH_TOKEN}}
 
       # Step 8
       # Optional step, will enable you to see what you have released as well here on GitHub 
