@@ -14,7 +14,7 @@ allprojects {
 
     def ENV = System.getenv()
 
-    version = "${project.mod_version}+${rootProject.minecraft_base_version}-SNAPSHOT"
+    version = "${project.mod_version}+${rootProject.mod_minecraft_base_version}${rootProject.mod_version_lable}"
     group = rootProject.maven_group
 
     tasks.withType(JavaCompile) {
@@ -74,7 +74,7 @@ allprojects {
             mavenJava(MavenPublication) {
                 groupId = rootProject.maven_group
                 artifactId = 'quirl'
-                version = "${project.mod_version}+${rootProject.minecraft_base_version}-SNAPSHOT"
+                version = "${project.mod_version}+${rootProject.mod_minecraft_base_version}${rootProject.mod_version_lable}"
                 from components.java
 
                 pom {
