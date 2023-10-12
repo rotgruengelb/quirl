@@ -4,7 +4,7 @@ import net.fabricmc.api.ModInitializer;
 import net.minecraft.block.Blocks;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
-import net.rotgruengelb.quirl.behavior.shovel.v1.CustomShovelBlockInteract;
+import net.rotgruengelb.quirl.mechanics.interact.shovel.v1.CustomShovelBlockInteract;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

@@ -10,13 +10,13 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import net.minecraft.world.event.GameEvent;
-import net.rotgruengelb.quirl.behavior.result.v1.ToolBlockInteractResult;
+import net.rotgruengelb.quirl.mechanics.interact.result.v1.ToolBlockInteractResult;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import static net.rotgruengelb.quirl.behavior.shovel.v1.CustomShovelBlockInteract.CUSTOM_SHOVEL_INTERACT_RESULTS;
+import static net.rotgruengelb.quirl.mechanics.interact.shovel.v1.CustomShovelBlockInteract.CUSTOM_SHOVEL_INTERACT_RESULTS;
 
 @Mixin(ShovelItem.class)
 public class ShovelItemMixin {

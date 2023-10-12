@@ -1,4 +1,4 @@
-package net.rotgruengelb.quirl.behavior.result.v1;
+package net.rotgruengelb.quirl.mechanics.interact.result.v1;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.sound.SoundCategory;
