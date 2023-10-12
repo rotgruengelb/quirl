@@ -13,8 +13,12 @@ allprojects {
     apply plugin: "signing"
 
     def ENV = System.getenv()
+    def publishType = System.getenv("PUBLISH_TYPE")
 
-    version = "${project.mod_version}+${rootProject.minecraft_base_version}"
+    if (publishType == "SNAPSHOT") {
+        version = "${project.mod_version}+${rootProject.mod_minecraft_base_version}-SNAPSHOT"
+    }
+
     group = rootProject.maven_group
 
     tasks.withType(JavaCompile) {
@@ -72,7 +76,11 @@ allprojects {
     publishing {
         publications {
             mavenJava(MavenPublication) {
+                groupId = rootProject.maven_group
+                artifactId = 'quirl'
+                version = "${version}"
                 from components.java
+
                 pom {
                     name = 'quirl'
                     description = 'A Minecraft Fabric Library providing general utility and tools that help with adding to existing Minecraft mechanics.'
@@ -102,10 +110,10 @@ allprojects {
         repositories {
             maven {
                 name = "OSSRH"
-                url = "https://s01.oss.sonatype.org/content/repositories/snapshots/"
+                url = System.getenv("OSSRH_URL")
                 credentials {
-                    username = System.getenv("MAVEN_USERNAME")
-                    password = System.getenv("MAVEN_PASSWORD")
+                    username = System.getenv("OSSRH_USERNAME")
+                    password = System.getenv("OSSRH_PASSWORD")
                 }
             }
         }
