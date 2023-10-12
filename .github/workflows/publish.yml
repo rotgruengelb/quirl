@@ -1,8 +1,8 @@
 name: Publish to Maven Central
 
 on:
-  workflow_dispatch:
-#    types: [ created ]
+  release:
+    types: [ created ]
 
 jobs:
   publish:
@@ -57,8 +57,8 @@ jobs:
         env:
           OSSRH_USERNAME: ${{secrets.OSSRH_USERNAME}}
           OSSRH_PASSWORD: ${{secrets.OSSRH_TOKEN}}
-          OSSRH_URL: "https://s01.oss.sonatype.org/content/repositories/snapshots/"
-          PUBLISH_TYPE: "SNAPSHOT"
+          OSSRH_URL: "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
+          PUBLISH_TYPE: "CENTRAL"
 
       # Step 8
       # Optional step, will enable you to see what you have released as well here on GitHub 
