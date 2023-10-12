@@ -16,10 +16,7 @@ allprojects {
     def publishType = System.getenv("PUBLISH_TYPE")
 
     if (publishType == "SNAPSHOT") {
-        def commitId = System.getenv("COMMIT_ID")
-        version = "${commitId}+${rootProject.mod_minecraft_base_version}-SNAPSHOT"
-    } else {
-        version = "${project.mod_version}+${rootProject.mod_minecraft_base_version}"
+        version = "${project.mod_version}+${rootProject.mod_minecraft_base_version}-SNAPSHOT"
     }
 
     group = rootProject.maven_group
@@ -81,7 +78,7 @@ allprojects {
             mavenJava(MavenPublication) {
                 groupId = rootProject.maven_group
                 artifactId = 'quirl'
-                version = version
+                version = "${version}"
                 from components.java
 
                 pom {
