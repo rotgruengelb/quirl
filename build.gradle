@@ -13,8 +13,15 @@ allprojects {
     apply plugin: "signing"
 
     def ENV = System.getenv()
+    def publishType = System.getenv("PUBLISH_TYPE")
 
-    version = "${project.mod_version}+${rootProject.mod_minecraft_base_version}${rootProject.mod_version_lable}"
+    if (publishType == "SNAPSHOT") {
+        def commitId = System.getenv("COMMIT_ID")
+        version = "${commitId}+${rootProject.mod_minecraft_base_version}-SNAPSHOT"
+    } else {
+        version = "${project.mod_version}+${rootProject.mod_minecraft_base_version}"
+    }
+
     group = rootProject.maven_group
 
     tasks.withType(JavaCompile) {
@@ -106,7 +113,7 @@ allprojects {
         repositories {
             maven {
                 name = "OSSRH"
-                url = "${rootProject.publish_url}"
+                url = System.getenv("OSSRH_URL")
                 credentials {
                     username = System.getenv("OSSRH_USERNAME")
                     password = System.getenv("OSSRH_PASSWORD")
