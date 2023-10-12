@@ -3,7 +3,7 @@
   "id": "quirl",
   "version": "${version}",
   "name": "quirl",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "description": "A Minecraft Fabric Library providing general utility and tools that help with adding to existing Minecraft mechanics.",
   "authors": [
     "rotgruengelb"
   ],
