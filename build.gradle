@@ -81,7 +81,7 @@ allprojects {
             mavenJava(MavenPublication) {
                 groupId = rootProject.maven_group
                 artifactId = 'quirl'
-                version = "${project.mod_version}+${rootProject.mod_minecraft_base_version}${rootProject.mod_version_lable}"
+                version = version
                 from components.java
 
                 pom {
