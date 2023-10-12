@@ -1,16 +1,16 @@
-package net.rotgruengelb.quirl.behavior.shovel.v1.result;
+package net.rotgruengelb.quirl.behavior.result.v1;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 
-public class ShovelInteractResult {
+public class ToolBlockInteractResult {
 
     BlockState new_blockstate;
     SoundEvent interact_sound_event;
     SoundCategory interact_sound_category;
 
-    public ShovelInteractResult(BlockState newBlockstate, SoundEvent interactSoundEvent, SoundCategory interactSoundCategory) {
+    public ToolBlockInteractResult(BlockState newBlockstate, SoundEvent interactSoundEvent, SoundCategory interactSoundCategory) {
         new_blockstate = newBlockstate;
         interact_sound_event = interactSoundEvent;
         interact_sound_category = interactSoundCategory;
