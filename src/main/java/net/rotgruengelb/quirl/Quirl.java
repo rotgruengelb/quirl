@@ -21,8 +21,8 @@ public class Quirl implements ModInitializer {
         if (MOD_TEST_MODE) {
             LOGGER.warn("quirl is in test mode! do not release with 'MOD_TEST_MOD = true'!");
             CustomShovelBlockInteract.addResult(Blocks.ACACIA_PLANKS.getDefaultState(), Blocks.DIRT.getDefaultState(), SoundEvents.ITEM_SHOVEL_FLATTEN, SoundCategory.BLOCKS, true);
-            CustomShovelBlockInteract.addResult(Blocks.SPRUCE_PLANKS.getDefaultState(), Blocks.DIRT.getDefaultState(), SoundEvents.ITEM_BUCKET_EMPTY, SoundCategory.BLOCKS, false);
-            CustomAxeBlockInteract.addResult(Blocks.AMETHYST_BLOCK.getDefaultState(), Blocks.BLUE_ICE.getDefaultState(), SoundEvents.ITEM_AXE_STRIP, SoundCategory.BLOCKS, false);
+            CustomShovelBlockInteract.addResult(Blocks.SPRUCE_PLANKS.getDefaultState(), Blocks.DIRT.getDefaultState(), SoundEvents.ITEM_BUCKET_EMPTY, SoundCategory.BLOCKS);
+            CustomAxeBlockInteract.addResult(Blocks.AMETHYST_BLOCK.getDefaultState(), Blocks.BLUE_ICE.getDefaultState(), SoundEvents.ITEM_AXE_STRIP, SoundCategory.BLOCKS);
         }
     }
 }
