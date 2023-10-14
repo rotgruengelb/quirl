@@ -9,11 +9,13 @@ public class ToolBlockInteractResult {
     BlockState new_blockstate;
     SoundEvent interact_sound_event;
     SoundCategory interact_sound_category;
+    Boolean disable_surrounding_checks;
 
-    public ToolBlockInteractResult(BlockState newBlockstate, SoundEvent interactSoundEvent, SoundCategory interactSoundCategory) {
+    public ToolBlockInteractResult(BlockState newBlockstate, SoundEvent interactSoundEvent, SoundCategory interactSoundCategory, Boolean disableSurroundingChecks) {
         new_blockstate = newBlockstate;
         interact_sound_event = interactSoundEvent;
         interact_sound_category = interactSoundCategory;
+        disable_surrounding_checks = disableSurroundingChecks;
     }
 
 
@@ -27,5 +29,9 @@ public class ToolBlockInteractResult {
 
     public SoundCategory getInteract_sound_category() {
         return interact_sound_category;
+    }
+
+    public Boolean getDisable_surrounding_checks() {
+        return disable_surrounding_checks;
     }
 }
