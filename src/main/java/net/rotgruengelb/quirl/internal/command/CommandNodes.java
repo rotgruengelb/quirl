@@ -1,6 +1,7 @@
 package net.rotgruengelb.quirl.internal.command;
 
 import com.mojang.brigadier.arguments.FloatArgumentType;
+import me.lucko.fabric.api.permissions.v0.Permissions;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.minecraft.command.argument.EntityArgumentType;
 import net.minecraft.server.command.CommandManager;
@@ -12,7 +13,7 @@ public class CommandNodes {
 
             var floatArgType = FloatArgumentType.floatArg();
 
-            var velocityNode = CommandManager.literal("velocity").build();
+            var velocityNode = CommandManager.literal("velocity").requires(Permissions.require("quirl.command.velocity", 2)).build();
 
             var targetsArg = CommandManager.argument("targets", EntityArgumentType.entities()).build();
 
