@@ -27,6 +27,7 @@ public class Quirl implements ModInitializer {
             CustomShovelBlockInteract.addResult(Blocks.ACACIA_PLANKS.getDefaultState(), Blocks.DIRT.getDefaultState(), SoundEvents.ITEM_SHOVEL_FLATTEN, SoundCategory.BLOCKS, true);
             CustomShovelBlockInteract.addResult(Blocks.SPRUCE_PLANKS.getDefaultState(), Blocks.DIRT.getDefaultState(), SoundEvents.ITEM_BUCKET_EMPTY, SoundCategory.BLOCKS);
             CustomAxeBlockInteract.addResult(Blocks.AMETHYST_BLOCK.getDefaultState(), Blocks.BLUE_ICE.getDefaultState(), SoundEvents.ITEM_AXE_STRIP, SoundCategory.BLOCKS);
+
         }
     }
 }
