@@ -24,7 +24,7 @@ public class CustomPathBlock extends Block {
         SHAPE = Block.createCuboidShape(0.0, 0.0, 0.0, 16.0, 15.0, 16.0);
     }
 
-    protected CustomPathBlock(AbstractBlock.Settings settings, Block baseBlock) {
+    public CustomPathBlock(AbstractBlock.Settings settings, Block baseBlock) {
         super(settings);
         BASE_BLOCK = baseBlock;
     }
