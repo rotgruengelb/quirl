@@ -15,7 +15,7 @@ allprojects {
     def ENV = System.getenv()
     def publishType = System.getenv("PUBLISH_TYPE")
 
-    version = "${project.mod_version}+${rootProject.mod_minecraft_base_version}"
+    version = "${project.mod_version}+${project.mod_minecraft_base_version}"
 
     if (publishType == "SNAPSHOT") {
         version = "${project.mod_version}+${rootProject.mod_minecraft_base_version}-SNAPSHOT"
@@ -27,11 +27,17 @@ allprojects {
         options.compilerArgs << "-Xlint:unchecked"
     }
 
+    repositories {
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+    }
+
     dependencies {
         minecraft "com.mojang:minecraft:${rootProject.minecraft_version}"
         mappings "net.fabricmc:yarn:${rootProject.yarn_mappings}:v2"
         modImplementation "net.fabricmc:fabric-loader:${rootProject.loader_version}"
-        include(modImplementation("net.fabricmc.fabric-api:fabric-command-api-v2:${project.fabric_command_api_version}"))
+        include(modImplementation(fabricApi.module("fabric-api-base", project.fabric_version)))
+        include(modImplementation(fabricApi.module("fabric-command-api-v2", project.fabric_version)))
+        include(modImplementation('me.lucko:fabric-permissions-api:0.2-SNAPSHOT'))
     }
 
     processResources {
