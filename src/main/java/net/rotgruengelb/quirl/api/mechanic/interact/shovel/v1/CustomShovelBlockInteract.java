@@ -1,9 +1,9 @@
-package net.rotgruengelb.quirl.mechanics.interact.shovel.v1;
+package net.rotgruengelb.quirl.api.mechanic.interact.shovel.v1;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
-import net.rotgruengelb.quirl.mechanics.interact.result.v1.ToolBlockInteractResult;
+import net.rotgruengelb.quirl.api.mechanic.interact.result.v1.ToolBlockInteractResult;
 
 import java.util.HashMap;
 import java.util.Map;

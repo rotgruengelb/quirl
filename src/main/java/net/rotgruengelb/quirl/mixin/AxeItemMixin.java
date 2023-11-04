@@ -9,13 +9,13 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.event.GameEvent;
-import net.rotgruengelb.quirl.mechanics.interact.result.v1.ToolBlockInteractResult;
+import net.rotgruengelb.quirl.api.mechanic.interact.result.v1.ToolBlockInteractResult;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import static net.rotgruengelb.quirl.mechanics.interact.axe.v1.CustomAxeBlockInteract.CUSTOM_AXE_INTERACT_RESULTS;
+import static net.rotgruengelb.quirl.api.mechanic.interact.axe.v1.CustomAxeBlockInteract.CUSTOM_AXE_INTERACT_RESULTS;
 
 @Mixin(AxeItem.class)
 public class AxeItemMixin {
