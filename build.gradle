@@ -12,13 +12,15 @@ allprojects {
     apply plugin: "maven-publish"
     apply plugin: "signing"
 
+    group = 'net.rotgruengelb'
+    version = "${project.mod_version}+${rootProject.mod_minecraft_base_version}"
+
     def ENV = System.getenv()
     def publishType = System.getenv("PUBLISH_TYPE")
-
-    version = "${project.mod_version}+${project.mod_minecraft_base_version}"
+    def uniqueId = System.getenv("UNIQUE_ID")
 
     if (publishType == "SNAPSHOT") {
-        version = "${project.mod_version}+${rootProject.mod_minecraft_base_version}-SNAPSHOT"
+        version = "${version}-${uniqueId}-SNAPSHOT"
     }
 
     group = rootProject.maven_group

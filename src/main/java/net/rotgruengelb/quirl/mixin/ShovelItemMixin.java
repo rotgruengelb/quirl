@@ -10,13 +10,12 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import net.minecraft.world.event.GameEvent;
-import net.rotgruengelb.quirl.api.mechanic.interact.result.v1.ToolBlockInteractResult;
+import net.rotgruengelb.quirl.api.mechanic.interact.onblock.ShovelBlockInteractRegistry;
+import net.rotgruengelb.quirl.api.mechanic.interact.onblock.ToolBlockInteractResult;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-
-import static net.rotgruengelb.quirl.api.mechanic.interact.shovel.v1.CustomShovelBlockInteract.CUSTOM_SHOVEL_INTERACT_RESULTS;
 
 @Mixin(ShovelItem.class)
 public class ShovelItemMixin {
@@ -27,7 +26,7 @@ public class ShovelItemMixin {
         BlockPos blockPos = context.getBlockPos();
         BlockState blockState = world.getBlockState(blockPos);
         PlayerEntity playerEntity = context.getPlayer();
-        ToolBlockInteractResult shovelInteractResult = CUSTOM_SHOVEL_INTERACT_RESULTS.get(blockState);
+        ToolBlockInteractResult shovelInteractResult = ShovelBlockInteractRegistry.getResult(blockState);
         BlockState blockState3 = null;
         if (shovelInteractResult != null) {
             if ((world.getBlockState(blockPos.up()).isAir() && (context.getSide() != Direction.DOWN)) || shovelInteractResult.getDisable_surrounding_checks()) {
