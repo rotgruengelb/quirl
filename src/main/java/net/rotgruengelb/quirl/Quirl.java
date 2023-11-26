@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
 public class Quirl implements ModInitializer {
     public static final Logger LOGGER = LoggerFactory.getLogger("quirl");
     public static final String MOD_ID = "quirl";
-    public static final Boolean MOD_TEST_MODE = true;
+    public static final Boolean MOD_TEST_MODE = false;
 
     @Override
     public void onInitialize() {
