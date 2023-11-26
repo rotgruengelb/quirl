@@ -1,4 +1,4 @@
-package net.rotgruengelb.quirl.api.mechanic.interact.result.v1;
+package net.rotgruengelb.quirl.api.mechanic.interact.onblock;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.sound.SoundCategory;
@@ -6,10 +6,10 @@ import net.minecraft.sound.SoundEvent;
 
 public class ToolBlockInteractResult {
 
-    BlockState new_blockstate;
-    SoundEvent interact_sound_event;
-    SoundCategory interact_sound_category;
-    Boolean disable_surrounding_checks;
+    final BlockState new_blockstate;
+    final SoundEvent interact_sound_event;
+    final SoundCategory interact_sound_category;
+    final Boolean disable_surrounding_checks;
 
     public ToolBlockInteractResult(BlockState newBlockstate, SoundEvent interactSoundEvent, SoundCategory interactSoundCategory, Boolean disableSurroundingChecks) {
         new_blockstate = newBlockstate;
