@@ -18,7 +18,7 @@ dependencies {
 ```
 ### `gradle.properties`:
 ```properties
-quirl_version=<quirl version>+<mc version>
+quirl_version=<quirl_version>+<mc_version>
 ```
 
 ### Remember to add the dependency to your `fabric.mod.json`
