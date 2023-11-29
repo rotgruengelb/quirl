@@ -30,6 +30,8 @@ allprojects {
     }
 
     repositories {
+        mavenCentral()
+        url = uri("https://ueaj.dev/maven")
         maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
     }
 
@@ -40,6 +42,7 @@ allprojects {
         include(modImplementation(fabricApi.module("fabric-api-base", project.fabric_version)))
         include(modImplementation(fabricApi.module("fabric-command-api-v2", project.fabric_version)))
         include(modImplementation('me.lucko:fabric-permissions-api:0.2-SNAPSHOT'))
+        include(modImplementation("net.devtech:arrp:0.8.0")) //
     }
 
     processResources {

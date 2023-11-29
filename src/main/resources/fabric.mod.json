@@ -3,7 +3,7 @@
   "id": "quirl",
   "version": "${version}",
   "name": "quirl",
-  "description": "A Minecraft FabricMC utility Mod and Library containing tools that help with adding to existing Minecraft mechanics.",
+  "description": "A Minecraft FabricMC Utility and Library Mod. (some useful stuff, you know).",
   "authors": [
     "rotgruengelb"
   ],
